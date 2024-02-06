@@ -12,6 +12,9 @@ Step 3: 'erosion and deposition'
 Run the 'm' file. Specific characteristic parameters of sediment transport can be obtained.
 
 Xin Cong
+
 Email: congxin1992@foxmail.com
+
 ResearchGate Homepage: https://www.researchgate.net/profile/Xin_Cong
+
 Version: 02/06/2024
