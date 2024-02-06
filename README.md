@@ -10,3 +10,7 @@ The files of 'data-r0' and 'data-r1' in the folder of 'erosion and deposition' c
 
 Step 3: 'erosion and deposition'
 Run the 'm' file. Specific characteristic parameters of sediment transport can be obtained.
+
+Xin Cong
+Email: congxin1992@foxmail.com
+Version: 02/06/2024
