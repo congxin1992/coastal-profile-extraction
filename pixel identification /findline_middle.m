@@ -1,12 +1,12 @@
-%% ¶ÁÈ¡µ±Ç°ÎÄ¼ş¼ĞÄÚµÄËùÓĞpngÍ¼Æ¬
+%% è¯»å–å½“å‰æ–‡ä»¶å¤¹å†…çš„æ‰€æœ‰pngå›¾ç‰‡
 
 clear;
 clc;
 close all;
 Profilename = 'correction';
-% »ñÈ¡µ±Ç°ÎÄ¼ş¼ĞÖĞËùÓĞpngÎÄ¼şµÄÎÄ¼şÃû
+% è·å–å½“å‰æ–‡ä»¶å¤¹ä¸­æ‰€æœ‰pngæ–‡ä»¶çš„æ–‡ä»¶å
 fileList = dir('*.png');
-% ±éÀúÎÄ¼şÁĞ±í£¬Öğ¸ö¶ÁÈ¡ÎÄ¼ş
+% éå†æ–‡ä»¶åˆ—è¡¨ï¼Œé€ä¸ªè¯»å–æ–‡ä»¶
 figure(1)
 pic0=fileList(1).name;
 imshow(pic0);
@@ -14,7 +14,7 @@ hold on;
 
 for i = 1:length(fileList)
     filename = fileList(i).name;
-    % Ê¹ÓÃimreadº¯Êı¶ÁÈ¡ÎÄ¼ş
+    % ä½¿ç”¨imreadå‡½æ•°è¯»å–æ–‡ä»¶
     img = imread(filename);
     [m,n,color] = size(img);
     img1 = rgb2gray(img);
@@ -22,16 +22,16 @@ for i = 1:length(fileList)
     G = img(:,:,2);
     B = img(:,:,3);
     clear A1 A2
-    [A1,A2] = find(R==235 & G==6 & B==6); % A1-Y A2-X£¬ÒÑ¾­½«RGB¾ÀÕı
+    [A1,A2] = find(R==235 & G==6 & B==6); % A1-Y A2-Xï¼Œå·²ç»å°†RGBçº æ­£
     figure(1)
     plot(A2,A1,'-.b','LineWidth',1);
     title(filename);
     hold on;
-    %½«ºá×İ×ø±ê×ª»¯ÎªÒÔË®²Ûµ×²¿Îª0µãµÄ×ø±êÏµ
+    %å°†æ¨ªçºµåæ ‡è½¬åŒ–ä¸ºä»¥æ°´æ§½åº•éƒ¨ä¸º0ç‚¹çš„åæ ‡ç³»
     A2=8.7-(934-A2)*0.001655;
     A1=(556-A1)*0.001724+0.45;
     
-    PDATA = [A2 A1];%ÒÑ½«Ë³Ğòµ÷ÕûÎªxy×ø±êµÄÕıÈ·±ê×¢
+    PDATA = [A2 A1];%å·²å°†é¡ºåºè°ƒæ•´ä¸ºxyåæ ‡çš„æ­£ç¡®æ ‡æ³¨
     
     writematrix(PDATA, 'data.xlsx', 'Sheet', i);
 end
